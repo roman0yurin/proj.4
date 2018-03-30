@@ -12,7 +12,12 @@
 cmake_minimum_required(VERSION 2.6.0 FATAL_ERROR)
 
 # proj4 is an ANSI C project
-project(PROJ4 C)
+project(PROJ4 C CXX)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+set(CMAKE_C_STANDARD 11)
 set(PROJECT_INTERN_NAME PROJ)
 
 #################################################################################
