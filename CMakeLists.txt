@@ -123,3 +123,5 @@ add_subdirectory(src)
 add_subdirectory(man)
 add_subdirectory(cmake)
 
+set_property(GLOBAL PROPERTY PROJ4_INDLUDE_DIRS ${PROJ4_SOURCE_DIR}/src ${PROJ4_BINARY}/src)
+
