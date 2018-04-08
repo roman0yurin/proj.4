@@ -6,7 +6,7 @@ message(STATUS "")
 
 # default config, shared on unix and static on Windows
 if(UNIX)
-    set(BUILD_LIBPROJ_SHARED_DEFAULT ON )
+    set(BUILD_LIBPROJ_SHARED_DEFAULT OFF )
 endif(UNIX)
 if( WIN32)
     set(BUILD_LIBPROJ_SHARED_DEFAULT OFF)
@@ -263,7 +263,7 @@ endif(WIN32 AND BUILD_LIBPROJ_SHARED)
 
 # Core targets configuration
 string(TOLOWER "${PROJECT_INTERN_NAME}" PROJECTNAMEL)
-set(PROJ_CORE_TARGET ${PROJECTNAMEL})
+set(PROJ_CORE_TARGET proj4)
 proj_target_output_name(${PROJ_CORE_TARGET} PROJ_CORE_TARGET_OUTPUT_NAME)
 
 add_library( ${PROJ_CORE_TARGET}
