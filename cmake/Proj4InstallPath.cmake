@@ -1,41 +1,41 @@
 #----------------------------------------------
 # installation path settings
 #----------------------------------------------
-if(WIN32)
-  if(DEFINED ENV{OSGEO4W_ROOT})
-    set(OSGEO4W_ROOT_DIR $ENV{OSGEO4W_ROOT})
-  else()
-    set(OSGEO4W_ROOT_DIR c:/OSGeo4W)
-  endif()
-  set(DEFAULT_PROJ_ROOT_DIR ${OSGEO4W_ROOT_DIR})
-endif()
-if(UNIX)
+#if(WIN32)
+#  if(DEFINED ENV{OSGEO4W_ROOT})
+#    set(OSGEO4W_ROOT_DIR $ENV{OSGEO4W_ROOT})
+#  else()
+#    set(OSGEO4W_ROOT_DIR c:/OSGeo4W)
+#  endif()
+#  set(DEFAULT_PROJ_ROOT_DIR ${OSGEO4W_ROOT_DIR})
+#endif()
+#if(UNIX)
   set(DEFAULT_PROJ_ROOT_DIR "/usr/local/")
-endif(UNIX)
-
-
-IF(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
-	SET(CMAKE_INSTALL_PREFIX ${DEFAULT_PROJ_ROOT_DIR} CACHE PATH "Foo install
-		 prefix" FORCE)
-ENDIF(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
-
-#TODO 
-# for data install testing the PROJ_LIB envVar
-
-if(WIN32)
-  set(DEFAULT_BIN_SUBDIR bin)
-  set(DEFAULT_LIB_SUBDIR local/lib)
-  set(DEFAULT_DATA_SUBDIR share)
-  set(DEFAULT_INCLUDE_SUBDIR local/include)
-  set(DEFAULT_DOC_SUBDIR share/doc/proj)
-else()
+#endif(UNIX)
+#
+#
+#IF(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
+#	SET(CMAKE_INSTALL_PREFIX ${DEFAULT_PROJ_ROOT_DIR} CACHE PATH "Foo install
+#		 prefix" FORCE)
+#ENDIF(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
+#
+##TODO
+## for data install testing the PROJ_LIB envVar
+#
+#if(WIN32)
+#  set(DEFAULT_BIN_SUBDIR bin)
+#  set(DEFAULT_LIB_SUBDIR local/lib)
+#  set(DEFAULT_DATA_SUBDIR share)
+#  set(DEFAULT_INCLUDE_SUBDIR local/include)
+#  set(DEFAULT_DOC_SUBDIR share/doc/proj)
+#else()
   # Common locatoins for Unix and Mac OS X
   set(DEFAULT_BIN_SUBDIR bin)
   set(DEFAULT_LIB_SUBDIR lib)
   set(DEFAULT_DATA_SUBDIR share/proj)
   set(DEFAULT_DOC_SUBDIR doc/proj)
   set(DEFAULT_INCLUDE_SUBDIR include)
-endif()
+#endif()
 
 # Locations are changeable by user to customize layout of PDAL installation
 # (default values are platform-specific)

@@ -12,6 +12,10 @@
 #  define M_PI 3.14159265358979323846
 #endif
 
+#ifdef __MINGW32__
+#define DBL_EPSILON __DBL_EPSILON__
+#endif
+
 /*
  * Proj 4 provides its own entry points into
  * the code, so none of the library functions
